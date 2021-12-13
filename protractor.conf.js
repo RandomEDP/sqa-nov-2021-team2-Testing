@@ -8,7 +8,7 @@ exports.config = {
     'features/*.feature'
   ],
   cucumberOpts: {
-    require: 'features/steps/*_steps.js',
+    require: 'features/steps/*.js',
     format: 'pretty'
   }
 }

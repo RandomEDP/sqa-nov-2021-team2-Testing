@@ -1,8 +1,9 @@
+const { element } = require("protractor");
 
 var CalculatorPage = function() {
 
   this.get = function() {
-    browser.get('http://juliemr.github.io/protractor-demo/');
+    browser.get('https://cipher.kierancaruana.com');
   };
 
   this.setFirstValue = function(value) {
@@ -21,9 +22,13 @@ var CalculatorPage = function() {
     return element(by.binding('latest')).getText();
   };
 
-  this.clickGo = function() {
-    element(by.id('gobutton')).click()
+  this.numberOfShifts = function(value) {
+    element(by.css('body > div > div > input:nth-of-type(1)')).sendKeys(value)
   }
+
+  this.preEncryptionTest = function(value) {
+    element(by.css('body > div > div > input:nth-of-type(2)'))
+  } 
 };
 
 module.exports = CalculatorPage;
