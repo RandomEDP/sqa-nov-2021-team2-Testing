@@ -11,4 +11,5 @@ exports.config = {
     require: 'features/steps/*.js',
     format: 'pretty'
   }
+  
 }

@@ -1,4 +1,4 @@
-const { element } = require("protractor");
+const { element, browser } = require("protractor");
 
 var CalculatorPage = function() {
 
@@ -23,12 +23,24 @@ var CalculatorPage = function() {
   };
 
   this.numberOfShifts = function(value) {
-    element(by.css('body > div > div > input:nth-of-type(1)')).sendKeys(value)
+    element(by.id('caesarArgBox')).sendKeys(value);
   }
 
   this.preEncryptionTest = function(value) {
-    element(by.css('body > div > div > input:nth-of-type(2)'))
+    element(by.css('body > div > div:nth-of-type(3) > input')).sendKeys(value);
+  }
+
+  this.postEncryptionTest = function(value) {
+    element(by.css('body > div > div:nth-of-type(4) > input')).sendKeys(value);
   } 
+
+  this.getPreEncryptionTest = function(value) {
+    return element(by.css('body > div > div:nth-of-type(3) > input')).getAttribute('value');
+  } 
+
+  this.getPostEncryptionTest = function() {
+    return element(by.css('body > div > div:nth-of-type(4) > input')).getAttribute('value');
+    } 
 };
 
 module.exports = CalculatorPage;
