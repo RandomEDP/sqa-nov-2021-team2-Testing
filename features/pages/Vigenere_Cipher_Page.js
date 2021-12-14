@@ -1,9 +1,9 @@
 //Protractor is a wrapper around Selenium Webdriver that provides an automation test framework
 //which simulates user interaction with an Angular web application for a range of browsers and mobile devices.
 //It provides all features of Selenium WebDriver along with Angular specific features for seamless end to end testing.
-const { element, browser } = require("protractor");
+const { element, browser, by } = require("protractor");
 
-var CeaserCalculatorPage = function() {
+var VigenereCalculatorPage = function() {
 
   this.get = function() {
     browser.get('https://cipher.kierancaruana.com');
@@ -25,6 +25,11 @@ var CeaserCalculatorPage = function() {
     return element(by.binding('latest')).getText();
   };
 
+  this.vigenereArgBox = function(value) {
+    element(by.id('vigenereArgBox')).clear();
+    element(by.id('vigenereArgBox')).sendKeys(value);
+  }
+
   this.numberOfShifts = function(value) {
     element(by.id('caesarArgBox')).sendKeys(value);
   }
@@ -44,6 +49,15 @@ var CeaserCalculatorPage = function() {
   this.getPostEncryptionTest = function() {
     return element(by.css('body > div > div:nth-of-type(4) > input')).getAttribute('value');
     } 
+
+  this.cipherTypeSelector = function() {
+    element(by.id('cipherTypeSelector'))
+  }
+
+  this.selectDropdownbyNum = function () {
+    element(by.id("cipherTypeSelector")).click();
+    element(by.css('body > div > div > select > option:nth-of-type(2)')).click();
+  };
 };
 
-module.exports = CeaserCalculatorPage;
+module.exports = VigenereCalculatorPage;
