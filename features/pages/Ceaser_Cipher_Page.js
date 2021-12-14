@@ -1,4 +1,7 @@
-const { element } = require("protractor");
+//Protractor is a wrapper around Selenium Webdriver that provides an automation test framework
+//which simulates user interaction with an Angular web application for a range of browsers and mobile devices.
+//It provides all features of Selenium WebDriver along with Angular specific features for seamless end to end testing.
+const { element, browser } = require("protractor");
 
 var CalculatorPage = function() {
 
@@ -23,12 +26,24 @@ var CalculatorPage = function() {
   };
 
   this.numberOfShifts = function(value) {
-    element(by.css('body > div > div > input:nth-of-type(1)')).sendKeys(value)
+    element(by.id('caesarArgBox')).sendKeys(value);
   }
 
   this.preEncryptionTest = function(value) {
-    element(by.css('body > div > div > input:nth-of-type(2)'))
+    element(by.css('body > div > div:nth-of-type(3) > input')).sendKeys(value);
+  }
+
+  this.postEncryptionTest = function(value) {
+    element(by.css('body > div > div:nth-of-type(4) > input')).sendKeys(value);
   } 
+
+  this.getPreEncryptionTest = function(value) {
+    return element(by.css('body > div > div:nth-of-type(3) > input')).getAttribute('value');
+  } 
+
+  this.getPostEncryptionTest = function() {
+    return element(by.css('body > div > div:nth-of-type(4) > input')).getAttribute('value');
+    } 
 };
 
 module.exports = CalculatorPage;
