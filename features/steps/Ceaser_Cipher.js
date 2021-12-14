@@ -34,12 +34,10 @@ var Ceaser_Cipher = function() {
   });
 
   this.Then(/^the post result should equal "([^"]*)"$/, function (result, callback) {
-    browser.sleep(2000)
     expect(this.page.getPreEncryptionTest()).to.eventually.equal(result).and.notify(callback);
   });
 
   this.Then(/^the pre result should equal "([^"]*)"$/, function (result, callback) {
-    browser.sleep(2000)
     expect(this.page.getPostEncryptionTest()).to.eventually.equal(result).and.notify(callback);
   });
 
