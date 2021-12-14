@@ -8,6 +8,10 @@ Feature: Testing
      Examples:
      | Pre_Encryption_Test | Number_Of_Shifts | Post_Encryption_Result |
      | test                | 1                | uftu                   |
+     | hello               | 5                | mjqqt                  |
+     | Ceaser              | 3                | Fhdvhu                 |
+     | Ceaser Chiper       | 12               | Oqmeqd Otubqd          |
+     
 
   Scenario Outline: Post Encryption
     Given Ceaser Cipher Is Open
@@ -17,5 +21,8 @@ Feature: Testing
      Examples:
      | Pre_Encryption_Test | Number_Of_Shifts | Post_Encryption_Result |
      | test                | -1                | uftu                   |
+     | hello               | -5                | mjqqt                  |
+     | Ceaser              | -3                | Fhdvhu                 |
+     | Ceaser Chiper       | -12               | Oqmeqd Otubqd          |
 
 
