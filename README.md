@@ -1,8 +1,7 @@
 # protractor-cucumber-example
 Example project using Protractor with Cucumber and Page Objects
 
-This creates some basic cucumber tests using the same Super Calculator application used in the official Protractor tutorial - http://juliemr.github.io/protractor-demo/
-
+This tests uses automated tests to run the https://cipher.kierancaruana.com 
 
 ## Getting Started
 
