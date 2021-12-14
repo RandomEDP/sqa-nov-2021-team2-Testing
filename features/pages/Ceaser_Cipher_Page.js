@@ -1,3 +1,6 @@
+//Protractor is a wrapper around Selenium Webdriver that provides an automation test framework
+//which simulates user interaction with an Angular web application for a range of browsers and mobile devices.
+//It provides all features of Selenium WebDriver along with Angular specific features for seamless end to end testing.
 const { element, browser } = require("protractor");
 
 var CalculatorPage = function() {
